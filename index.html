@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LAUTI VERA</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="IMG/perla.png" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+    <meta name="author" content="Enzo Rivero">
+    <meta name="keywords" content="lauti vera, lauti, vera, el aperitivo,album lauti, aperitivo">
+    <meta property="og:title" content="LAUTI VERA">
+    <meta property="og:description" content="Lauti Vera | EL APERITIVO">
+</head>
+
+<body>
+    <header>
+        <h1>
+            <img src="IMG/LV PRESENTA EL APERITIVO.png" alt="Lauti Vera PRESENTA EL APERITIVO">
+        </h1>
+
+        <h2>
+            <img src="IMG/Reserva tu lugar.png" alt="Reserva tu lugar">
+        </h2>
+    </header>
+
+    <main>
+        <section class="form-box">
+            <form action="" onsubmit="return false;">
+                <input type="email" name="email" id="email" placeholder="Correo" required>
+                <button type="submit" id="submit-btn" class="btn-submit" onclick="handleSubmit()">Enviar
+                </button>
+            </form>
+        </section>
+
+        <div id="countdown" class="flip-countdown">
+            <div class="time-block">
+                <span class="label">DÍAS</span>
+                <div class="digit-container">
+                    <div class="flip-card" data-days-tens>0</div>
+                    <div class="flip-card" data-days-units>0</div>
+                </div>
+            </div>
+            <div class="time-block">
+                <span class="label">HORAS</span>
+                <div class="digit-container">
+                    <div class="flip-card" data-hours-tens>0</div>
+                    <div class="flip-card" data-hours-units>0</div>
+                </div>
+            </div>
+            <div class="time-block">
+                <span class="label">MINUTOS</span>
+                <div class="digit-container">
+                    <div class="flip-card" data-minutes-tens>0</div>
+                    <div class="flip-card" data-minutes-units>0</div>
+                </div>
+            </div>
+            <div class="time-block">
+                <span class="label">SEGUNDOS</span>
+                <div class="digit-container">
+                    <div class="flip-card" data-seconds-tens>0</div>
+                    <div class="flip-card" data-seconds-units>0</div>
+                </div>
+            </div>
+        </div>
+
+        <section class="social">
+            <a href="https://www.youtube.com/@lautivera11" target="_blank">
+                <img src="IMG/Youtube.png" alt="Logo YouTube">
+            </a>
+
+            <a href="https://open.spotify.com/intl-es/artist/6cPL1aDgIkR5qMGV5W50dE" target="_blank">
+                <img src="IMG/Spotify.png" alt="Logo spotify">
+            </a>
+        </section>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+    <script>
+        (function () {
+            emailjs.init("QP7lXgXVTpqlnwv3F");
+        })();
+    </script>
+
+    <script src="script.js"></script>
+
+
+</body>
+
+</html>

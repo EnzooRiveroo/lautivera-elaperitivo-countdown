@@ -1,0 +1,404 @@
+/* GENERAL */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-image: url("IMG/Fondo.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    text-align: center;
+}
+
+/* HEADER */
+
+header {
+    margin-top: 70px;
+}
+
+h1 img {
+    width: 30%;
+    max-width: 300px;
+    display: block;
+    margin: 20px auto;
+}
+
+h2 img {
+    width: 100%;
+    max-width: 580px;
+    display: block;
+    margin: 25px auto;
+}
+
+/* INPUT Y BOTÓN */
+
+.form-box {
+    position: relative;
+    width: 760px;
+    margin-top: 20px;
+}
+
+.form-box form {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.form-box input {
+    width: 100%;
+    padding: 20px 100px 20px 20px;
+    border-radius: 10px;
+    border: none;
+    outline: none;
+    height: 50px;
+}
+
+.form-box button {
+    position: absolute;
+    right: 5px;
+    top: 50%;
+    transform: translateY(-50%);
+    padding: 8px 15px;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    background-color: rgb(57, 57, 153);
+    color: white;
+    z-index: 10;
+    height: 40px;
+}
+
+.form-box input {
+    border: 2px solid transparent;
+    transition: 0.3s;
+}
+
+.form-box input:focus {
+    border: 2px solid #fff;
+    box-shadow: 0 0 12px #ffffffaa;
+}
+
+input::placeholder {
+    font-style: italic;
+    font-family: "Montserrat", sans-serif;
+}
+
+button {
+    font-family: "Montserrat", sans-serif;
+    font-weight: bold;
+    font-style: italic;
+    font-size: medium;
+}
+
+.btn-submit:hover {
+    background-color: #7273b4;
+}
+
+/* INICIO: ESTILOS CONTADOR FLIP-CARD */
+
+.flip-countdown {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 20px;
+    font-family: sans-serif;
+    perspective: 1000px;
+}
+
+.time-block {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+}
+
+.digit-container {
+    display: flex;
+}
+
+.label {
+    color: #fff;
+    font-size: 0.6em;
+    font-weight: 300;
+    margin-bottom: 2px;
+}
+
+.flip-card {
+    position: relative;
+    width: 30px;
+    height: 45px;
+    background-color: #333;
+    color: #fff;
+    font-size: 1.8em;
+    font-weight: bold;
+    border-radius: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    overflow: hidden;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.4);
+    line-height: 1;
+}
+
+.flip-card:first-child {
+    border-top-left-radius: 6px;
+    border-bottom-left-radius: 6px;
+}
+
+.flip-card:last-child {
+    border-top-right-radius: 6px;
+    border-bottom-right-radius: 6px;
+}
+
+/* LINEA DE SEPARACIÓN */
+.flip-card::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background-color: rgba(0, 0, 0, 0.2);
+    transform: translateY(-50%);
+    z-index: 10;
+}
+
+/* MITAD DE ANIMACIONES */
+.top-half,
+.bottom-half,
+.new-top-half {
+    position: absolute;
+    width: 100%;
+    height: 50%;
+    background-color: #333;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    color: #fff;
+    font-size: 1em;
+    font-weight: bold;
+    line-height: 1.8;
+}
+
+/* MITAD SUPERIOR (NUMERO ACTUAL MUESTRA) */
+.top-half {
+    top: 0;
+    align-items: flex-end;
+    border-radius: inherit;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+    z-index: 20;
+}
+
+/* MITAD INFERIOR (MUESTRA EL NUEVO NUMERO) */
+.bottom-half {
+    bottom: 0;
+    align-items: flex-start;
+    /* Ajuste de bordes */
+    border-radius: inherit;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    background-color: #222;
+}
+
+/* MITAD SUPERIOS (INICIO DE ANIMACION) */
+.new-top-half {
+    top: 0;
+    align-items: flex-end;
+    border-radius: inherit;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+    transform-origin: bottom;
+    transform: rotateX(0deg);
+    z-index: 30;
+    background-color: #444;
+    animation: flip-top 0.4s ease-in;
+}
+
+@keyframes flip-top {
+    0% {
+        transform: rotateX(0deg);
+    }
+
+    100% {
+        transform: rotateX(-90deg);
+    }
+}
+
+.finished-message {
+    color: #fff;
+    font-size: 1.5em;
+    font-weight: bold;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+}
+
+/* ICONOS REDES */
+
+.social {
+    margin-top: 70px;
+    display: flex;
+    gap: 25px;
+    justify-content: center;
+}
+
+.social img {
+    width: 35px;
+    height: 35px;
+    object-fit: contain;
+    image-rendering: auto;
+    transition: 0.2s;
+}
+
+.social img:hover {
+    transform: scale(1.1);
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 800px) {
+
+    body {
+        justify-content: space-between;
+    }
+
+    main {
+        flex-grow: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    header {
+        margin-top: 40px;
+    }
+
+    .form-box {
+        width: 95%;
+        max-width: 550px;
+        margin-top: 15px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .form-box input {
+        padding: 15px 100px 15px 15px;
+        height: 60px;
+        font-size: 16px;
+    }
+
+    .form-box button {
+        height: 50px;
+        padding: 0 10px;
+        font-size: small;
+        min-width: 95px;
+        right: 5px; 
+    }
+
+    .form-box button.loading {
+        width: 95px;
+        height: 50px; 
+    }
+
+    h1 img {
+        max-width: 130px;
+        width: 60%;
+    }
+
+    h2 img {
+        max-width: 350px;
+        width: 80%;
+    }
+
+    .social {
+        margin-top: auto;
+        margin-bottom: 80px;
+        gap: 30px;
+    }
+
+    .social img {
+        width: 40px;
+        height: 40px;
+    }
+
+    /* INICIO: RESPONSIVE CONTADOR */
+    .flip-countdown {
+        gap: 6px;
+        margin-top: 50px;
+    }
+
+    .flip-card {
+        width: 25px;
+        height: 35px;
+        font-size: 1.4em;
+    }
+
+    .label {
+        font-size: 0.5em;
+    }
+
+    /* FIN: RESPONSIVE CONTADOR */
+}
+
+/* ANIMACION BOTON ENVIAR */
+
+.loading {
+    font-size: 0;
+    text-align: center;
+    position: relative;
+    pointer-events: none;
+    padding: 0;
+    transition: width 0.3s, height 0.3s;
+}
+
+.form-box button.loading {
+    width: 90px; 
+    height: 40px; 
+    padding: 0; 
+    font-size: 0; 
+    min-width: 95px;
+}
+
+.loading::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 20px;
+    height: 20px;
+    border: 2px solid rgba(0, 0, 0, 0.2);
+    border-top-color: #000;
+    border-radius: 50%;
+    animation: spinner 0.8s linear infinite;
+}
+
+.sent {
+    background-color: rgb(67, 112, 54) !important;
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    color: #000;
+    font-style: italic;
+    font-weight: bold;
+    pointer-events: none;
+    transition: 0.5s;
+}
+
+@keyframes spinner {
+    to {
+        transform: translate(-50%, -50%) rotate(360deg);
+    }
+}
